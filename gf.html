@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Shreya 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffe6f2;
+            font-family: 'Brush Script MT', cursive;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                linear-gradient(rgba(255,230,242,0.9), rgba(255,230,242,0.9)),
+                url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="%23ff3366" opacity="0.1"/></svg>');
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff3366;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .message-box {
+            background: #fff0f6;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 3px solid #ff99c2;
+            position: relative;
+            margin: 20px;
+            box-shadow: 0 0 30px rgba(255,51,102,0.1);
+        }
+
+        .message {
+            color: #cc0052;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin: 1.5rem 0;
+        }
+
+        .photo-frame {
+            border: 5px solid #ff3366;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 25px auto;
+            max-width: 300px;
+            background: white;
+            transform: rotate(-2deg);
+        }
+
+        .our-photo {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .our-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .yes-btn {
+            background: #ff3366;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255,51,102,0.3);
+        }
+
+        .yes-btn:hover {
+            background: #ff0066;
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .no-btn {
+            background: #ffd9e6;
+            color: #ff3366;
+            position: relative;
+        }
+
+        .no-btn:hover {
+            background: #ffc2d1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s infinite linear;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
+            50% { transform: translateY(-100px) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(-200px) rotate(45deg); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .message { font-size: 1.2rem; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Floating hearts -->
+        <div class="heart" style="left: 10%; animation-delay: 1s">❤</div>
+        <div class="heart" style="left: 30%; animation-delay: 3s">❤</div>
+        <div class="heart" style="left: 50%; animation-delay: 5s">❤</div>
+        <div class="heart" style="left: 70%; animation-delay: 2s">❤</div>
+        <div class="heart" style="left: 90%; animation-delay: 4s">❤</div>
+
+        <h1>My Beloved Shreya 💘</h1>
+        
+        <div class="message-box">
+            <p class="message">
+                To the girl who makes every moment magical,<br>
+                Whose smile outshines the morning sun,<br>
+                Who fills my days with joy and laughter...<br><br>
+                
+                Shreya, you're my favorite hello and hardest goodbye.<br>
+                Will you make this Valentine's Day the start of<br>
+                something beautiful and be mine forever?
+            </p>
+
+            <div class="photo-frame">
+                <img src="images/shreya-photo.jpg" alt="My Beautiful Shreya" class="our-photo">
+            </div>
+
+            <div class="buttons">
+                <button class="btn yes-btn" onclick="respond(true)">YES! 💖</button>
+                <button class="btn no-btn" onclick="respond(false)">Try Saying No 😉</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function respond(answer) {
+            if (answer) {
+                // Fireworks effect
+                var duration = 3000;
+                var end = Date.now() + duration;
+
+                (function frame() {
+                    confetti({
+                        particleCount: 7,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0 },
+                        colors: ['#ff3366', '#ff99c2', '#ffffff']
+                    });
+                    confetti({
+                        particleCount: 7,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1 },
+                        colors: ['#ff3366', '#ff99c2', '#ffffff']
+                    });
+
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                }());
+
+                // Romantic message
+                setTimeout(() => {
+                    alert("My heart is doing somersaults! 💃\n\nYou've just made me the luckiest person in the world!\nI promise to cherish every moment with you, my Shreya. 💍");
+                }, 500);
+            } else {
+                const noBtn = document.querySelector('.no-btn');
+                const randomX = Math.random() * (window.innerWidth - 120);
+                const randomY = Math.random() * (window.innerHeight - 60);
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = randomX + 'px';
+                noBtn.style.top = randomY + 'px';
+                noBtn.innerHTML = "You can't escape! 😘";
+                setTimeout(() => {
+                    noBtn.innerHTML = "Still No? 😢";
+                }, 1000);
+            }
+        }
+
+        // Add more floating hearts
+        function createHearts() {
+            const container = document.querySelector('.container');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 95 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.innerHTML = '❤';
+                container.appendChild(heart);
+            }
+        }
+
+        window.onload = createHearts;
+    </script>
+</body>
+</html>
